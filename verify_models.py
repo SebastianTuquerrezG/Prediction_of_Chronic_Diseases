@@ -11,11 +11,11 @@ models_info = {
         "train_csv": "data/diabetes_train.csv"   # opcional, para prueba
     },
     "hipertension": {
-        "joblib": "models/hipertension_model.joblib",
-        "train_csv": "data/hipertension_train.csv"
+        "joblib": "models/hypertension_model.joblib",
+        "train_csv": "data/hypertension_train.csv"
     },
     "obesidad": {
-        "joblib": "models/obesidad_model.joblib",
+        "joblib": "models/obesity_model.joblib",
         "train_csv": "data/obesidad_train.csv"
     },
 }
