@@ -6,3 +6,6 @@ joblib
 matplotlib
 plotly
 shap
+xgboost
+imbalanced-learn
+matplotlib
