@@ -109,23 +109,23 @@ with tab_diab:
         CholCheck = st.selectbox("CholCheck (1=yes cholesterol check in 5 years)", options=[1,0], index=1, key="diab_CholCheck")
         BMI = st.number_input("BMI (Body Mass Index)", min_value=0.0, max_value=200.0, value=25.0, step=0.1, key="diab_BMI")
     with cols[1]:
-        Smoker = st.selectbox("Smoker (1=si,0=no)", options=[1,0], index=1)
-        HeartDiseaseorAttack = st.selectbox("HeartDiseaseorAttack (1=si,0=no)", options=[1,0], index=0)
-        PhysActivity = st.selectbox("PhysActivity (1=si,0=no)", options=[1,0], index=1)
-        Fruits = st.selectbox("Fruits (1=si,0=no)", options=[1,0], index=1)
+        Smoker = st.selectbox("Smoker (1=si,0=no)", options=[1,0], index=1, key="diab_Smoker")
+        HeartDiseaseorAttack = st.selectbox("HeartDiseaseorAttack (1=si,0=no)", options=[1,0], index=0, key="diab_HeartDiseaseorAttack")
+        PhysActivity = st.selectbox("PhysActivity (1=si,0=no)", options=[1,0], index=1, key="diab_PhysActivity")
+        Fruits = st.selectbox("Fruits (1=si,0=no)", options=[1,0], index=1, key="diab_Fruits")
         Veggies = st.selectbox("Veggies (1=si,0=no)", options=[1,0], index=1, key="diab_Veggies")
     with cols[2]:
-        HvyAlcoholConsump = st.selectbox("HvyAlcoholConsump (1=si,0=no)", options=[1,0], index=0)
-        GenHlth = st.slider("GenHlth (1-excelente .. 5-pobre)", min_value=1, max_value=5, value=3)
-        MentHlth = st.number_input("MentHlth (días mala salud mental en último mes)", min_value=0, max_value=30, value=0)
-        PhysHlth = st.number_input("PhysHlth (días mala salud física en último mes)", min_value=0, max_value=30, value=0)
-        DiffWalk = st.selectbox("DiffWalk (1=si,0=no)", options=[1,0], index=0)
+        HvyAlcoholConsump = st.selectbox("HvyAlcoholConsump (1=si,0=no)", options=[1,0], index=0, key="diab_HvyAlcoholConsump")
+        GenHlth = st.slider("GenHlth (1-excelente .. 5-pobre)", min_value=1, max_value=5, value=3, key="diab_GenHlth")
+        MentHlth = st.number_input("MentHlth (días mala salud mental en último mes)", min_value=0, max_value=30, value=0, key="diab_MentHlth")
+        PhysHlth = st.number_input("PhysHlth (días mala salud física en último mes)", min_value=0, max_value=30, value=0, key="diab_PhysHlth")
+        DiffWalk = st.selectbox("DiffWalk (1=si,0=no)", options=[1,0], index=0, key="diab_DiffWalk")
     col4, col5 = st.columns(2)
     with col4:
-        Stroke = st.selectbox("Stroke (1=si,0=no)", options=[1,0], index=0)
-        HighBP = st.selectbox("HighBP (1=si,0=no)", options=[1,0], index=0)
+        Stroke = st.selectbox("Stroke (1=si,0=no)", options=[1,0], index=0, key="diab_Stroke")
+        HighBP = st.selectbox("HighBP (1=si,0=no)", options=[1,0], index=0, key="diab_HighBP")
     with col5:
-        sex = st.selectbox("Sexo", options=["male","female"], index=0)
+        sex = st.selectbox("Sexo", options=["male","female"], index=0, key="diab_sex")
         # encode sex to two columns
         sex_female = 1 if sex=="female" else 0
         sex_male = 1 if sex=="male" else 0
@@ -159,21 +159,21 @@ with tab_hip:
     st.header("Hipertensión — ingresar valores manualmente")
     cols = st.columns(3)
     with cols[0]:
-        age = st.number_input("age (años)", min_value=0, max_value=120, value=50, step=1)
-        cp = st.selectbox("cp (Chest pain type) 0=asymp 1=typical 2=atypical 3=non-anginal", options=[0,1,2,3], index=0)
-        trestbps = st.number_input("trestbps (mm Hg)", min_value=0, max_value=300, value=120)
-        chol = st.number_input("chol (mg/dl)", min_value=0, max_value=1000, value=200)
+        age = st.number_input("age (años)", min_value=0, max_value=120, value=50, step=1, key="hip_age")
+        cp = st.selectbox("cp (Chest pain type) 0=asymp 1=typical 2=atypical 3=non-anginal", options=[0,1,2,3], index=0, key="hip_cp")
+        trestbps = st.number_input("trestbps (mm Hg)", min_value=0, max_value=300, value=120, key="hip_trestbps")
+        chol = st.number_input("chol (mg/dl)", min_value=0, max_value=1000, value=200, key="hip_chol")
     with cols[1]:
-        fbs = st.selectbox("fbs (1 if fasting blood sugar > 120 mg/dl)", options=[1,0], index=1)
-        restecg = st.selectbox("restecg (0,1,2)", options=[0,1,2], index=0)
-        thalach = st.number_input("thalach (max heart rate achieved)", min_value=0, max_value=300, value=150)
+        fbs = st.selectbox("fbs (1 if fasting blood sugar > 120 mg/dl)", options=[1,0], index=1, key="hip_fbs")
+        restecg = st.selectbox("restecg (0,1,2)", options=[0,1,2], index=0, key="hip_restecg")
+        thalach = st.number_input("thalach (max heart rate achieved)", min_value=0, max_value=300, value=150, key="hip_thalach")
     with cols[2]:
-        exang = st.selectbox("exang (exercise induced angina) 1=yes 0=no", options=[1,0], index=0)
-        oldpeak = st.number_input("oldpeak (ST depression)", min_value=0.0, max_value=10.0, value=1.0, step=0.1)
-        slope = st.selectbox("slope (0 upsloping,1 flat,2 downsloping)", options=[0,1,2], index=1)
-        ca = st.selectbox("ca (number of major vessels 0-3)", options=[0,1,2,3], index=0)
-        thal = st.selectbox("thal (3 normal,6 fixed,7 reversible)", options=[3,6,7], index=0)
-    sex_hip = st.selectbox("Sexo", options=["male","female"], index=0)
+        exang = st.selectbox("exang (exercise induced angina) 1=yes 0=no", options=[1,0], index=0, key="hip_exang")
+        oldpeak = st.number_input("oldpeak (ST depression)", min_value=0.0, max_value=10.0, value=1.0, step=0.1, key="hip_oldpeak")
+        slope = st.selectbox("slope (0 upsloping,1 flat,2 downsloping)", options=[0,1,2], index=1, key="hip_slope")
+        ca = st.selectbox("ca (number of major vessels 0-3)", options=[0,1,2,3], index=0, key="hip_ca")
+        thal = st.selectbox("thal (3 normal,6 fixed,7 reversible)", options=[3,6,7], index=0, key="hip_thal")
+    sex_hip = st.selectbox("Sexo", options=["male","female"], index=0, key="hip_sex")
     sex_female_hip = 1 if sex_hip=="female" else 0
     sex_male_hip = 1 if sex_hip=="male" else 0
 
@@ -198,24 +198,24 @@ with tab_ob:
     st.header("Obesidad — ingresar valores manualmente")
     c1, c2, c3 = st.columns(3)
     with c1:
-        Age_o = st.number_input("Age", min_value=0, max_value=120, value=30)
-        Height = st.number_input("Height (cm)", min_value=50, max_value=250, value=170)
-        Weight = st.number_input("Weight (kg)", min_value=10, max_value=400, value=70)
-        family_history_with_overweight = st.selectbox("family_history_with_overweight (1=si,0=no)", options=[1,0], index=0)
+        Age_o = st.number_input("Age", min_value=0, max_value=120, value=30, step=1, key="ob_Age")
+        Height = st.number_input("Height (cm)", min_value=50, max_value=250, value=170, key="ob_Height")
+        Weight = st.number_input("Weight (kg)", min_value=10, max_value=400, value=70, key="ob_Weight")
+        family_history_with_overweight = st.selectbox("family_history_with_overweight (1=si,0=no)", options=[1,0], index=0, key="ob_family_history")
     with c2:
-        FAVC = st.selectbox("FAVC (frequent high-caloric food) (1=si,0=no)", options=[1,0], index=0)
-        FCVC = st.selectbox("FCVC (freq veg) 1-3", options=[1,2,3], index=1)
-        NCP = st.selectbox("NCP (n° main meals) 1-4", options=[1,2,3,4], index=2)
-        CAEC = st.selectbox("CAEC (snacking) 1-3", options=[1,2,3], index=0)
+        FAVC = st.selectbox("FAVC (frequent high-caloric food) (1=si,0=no)", options=[1,0], index=0, key="ob_FAVC")
+        FCVC = st.selectbox("FCVC (freq veg) 1-3", options=[1,2,3], index=1, key="ob_FCVC")
+        NCP = st.selectbox("NCP (n° main meals) 1-4", options=[1,2,3,4], index=2, key="ob_NCP")
+        CAEC = st.selectbox("CAEC (snacking) 1-3", options=[1,2,3], index=0, key="ob_CAEC")
     with c3:
-        SMOKE = st.selectbox("SMOKE (1=si,0=no)", options=[1,0], index=0)
-        CH2O = st.selectbox("CH2O (water consumption 1-3)", options=[1,2,3], index=1)
-        SCC = st.selectbox("SCC (caloric beverages 1=yes,0=no)", options=[1,0], index=0)
-        FAF = st.selectbox("FAF (physical activity 0-3)", options=[0,1,2,3], index=1)
-        TUE = st.selectbox("TUE (time devices 0-2)", options=[0,1,2], index=1)
-        CALC = st.selectbox("CALC (alcohol 0-2)", options=[0,1,2], index=0)
+        SMOKE = st.selectbox("SMOKE (1=si,0=no)", options=[1,0], index=0, key="ob_SMOKE")
+        CH2O = st.selectbox("CH2O (water consumption 1-3)", options=[1,2,3], index=1, key="ob_CH2O")
+        SCC = st.selectbox("SCC (caloric beverages 1=yes,0=no)", options=[1,0], index=0, key="ob_SCC")
+        FAF = st.selectbox("FAF (physical activity 0-3)", options=[0,1,2,3], index=1, key="ob_FAF")
+        TUE = st.selectbox("TUE (time devices 0-2)", options=[0,1,2], index=1, key="ob_TUE")
+        CALC = st.selectbox("CALC (alcohol 0-2)", options=[0,1,2], index=0, key="ob_CALC")
 
-    Gender = st.selectbox("Gender", options=["male","female"], index=0)
+    Gender = st.selectbox("Gender", options=["male","female"], index=0, key="ob_Gender")
     Gender_std_female = 1 if Gender=="female" else 0
     Gender_std_male = 1 if Gender=="male" else 0
 
